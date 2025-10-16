@@ -4,7 +4,7 @@
 #PBS -k oed
 #PBS -N seahelm_evaluation
 #PBS -q auto
-#PBS -l select=1:ngpus=8:ncpus=8
+#PBS -l select=1:ngpus=8
 #PBS -l walltime=56:00:00
 
 # Change to working directory
@@ -25,10 +25,10 @@ fi
 # running script
 python /scratch/e1583535/SEA-HELM/seahelm_evaluation.py \
 --tasks seahelm \
---output_dir /scratch/e1583535/SEA-HELM-scripts/output \
+--output_dir /scratch/e1583535/SEA-HELM-outputs \
 --model_type vllm \
---model_name /scratch/e1583535/llm/allenai/OLMo-2-0425-1B \
---model_args "enable_prefix_caching=True,tensor_parallel_size=8,gpu_memory_utilization=0.9,max_num_seqs=128"
+--model_name /scratch/e1583535/llm/SeaLLMs/SeaLLMs-v3-1.5B \
+--model_args "enable_prefix_caching=True,tensor_parallel_size=4,gpu_memory_utilization=0.9,max_num_seqs=128"
 
 # you can put more commands here
 echo "Done"
