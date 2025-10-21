@@ -1,0 +1,5 @@
+{"label": "C", "prompts": [{"sentence1": "他说，妈妈，我回来了。", "sentence2": "校车把他放下后，他立即给他妈妈打了电话。"}], "metadata": {"language": "zh"}}
+{"label": "B", "prompts": [{"sentence1": "他说，妈妈，我回来了。", "sentence2": "他没说一句话。"}], "metadata": {"language": "zh"}}
+{"label": "A", "prompts": [{"sentence1": "他说，妈妈，我回来了。", "sentence2": "他告诉他的妈妈他已经回到家了。"}], "metadata": {"language": "zh"}}
+{"label": "C", "prompts": [{"sentence1": "我不知道我要去干什么还是什么的，所以就去华盛顿指定的地方报到。", "sentence2": "我从来没有去过华盛顿，所以当我被派到那里时，为了找地方我都找迷路了。"}], "metadata": {"language": "zh"}}
+{"label": "B", "prompts": [{"sentence1": "我不知道我要去干什么还是什么的，所以就去华盛顿指定的地方报到。", "sentence2": "在我游行到华盛顿的时候我知道我要什么"}], "metadata": {"language": "zh"}}

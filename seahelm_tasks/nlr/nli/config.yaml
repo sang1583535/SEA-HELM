@@ -191,3 +191,73 @@ nli:
           ```
           Sagot: {label}
         fewshot_label: 'Sagot: {label}'
+    en:
+      filepath: seahelm_tasks/nlr/nli/data/en_xnli_1000sample.jsonl
+      example_filepath: seahelm_tasks/nlr/nli/data/en_xnli_examples.jsonl
+      max_tokens: 128
+      prompt_template:
+        template: |-
+          You will be given two sentences, SENTENCE_1 and SENTENCE_2. Determine which of the following statements is most appropriate for the SENTENCE_1 and SENTENCE_2.
+          A: If SENTENCE_1 is true, then SENTENCE_2 must also be true.
+          B: SENTENCE_1 contradicts SENTENCE_2.
+          C: When SENTENCE_1 is true, SENTENCE_2 may be true or false.
+
+          Answer only using the following format:
+          Answer: $OPTION
+          Replace $OPTION with your selected choice. Use only the letter A, B, or C as your answer.{fewshot_examples}
+
+          SENTENCE_1:
+          ```
+          {sentence1}
+          ```
+          SENTENCE_2:
+          ```
+          {sentence2}
+          ```
+        fewshot_example: |2-
+
+          SENTENCE_1:
+          ```
+          {sentence1}
+          ```
+          SENTENCE_2:
+          ```
+          {sentence2}
+          ```
+          Answer: {label}
+        fewshot_label: 'Answer: {label}'
+    zh:
+      filepath: seahelm_tasks/nlr/nli/data/zh_xnli_1000sample.jsonl
+      example_filepath: seahelm_tasks/nlr/nli/data/zh_xnli_examples.jsonl
+      max_tokens: 128
+      prompt_template:
+        template: |-
+          你将获得两个句子，SENTENCE_1 和 SENTENCE_2。确定以下哪个陈述最适合 SENTENCE_1 和 SENTENCE_2。
+          A：如果 SENTENCE_1 为真，则 SENTENCE_2 也必须为真。
+          B：SENTENCE_1 与 SENTENCE_2 矛盾。
+          C：当 SENTENCE_1 为真时，SENTENCE_2 可能为真或为假。 
+
+          仅使用以下格式回答：
+          答案：$OPTION
+          用您选择的选项替换 $OPTION。仅使用字母 A、B 或 C 作为您的答案。{fewshot_examples}
+
+          SENTENCE_1：
+          ```
+          {sentence1}
+          ```
+          SENTENCE_2：
+          ```
+          {sentence2}
+          ```
+        fewshot_example: |2-
+
+          SENTENCE_1：
+          ```
+          {sentence1}
+          ```
+          SENTENCE_2：
+          ```
+          {sentence2}
+          ```
+          答案：{label}
+        fewshot_label: '答案：{label}'

@@ -19,6 +19,8 @@ class NLIMetric(F1AccMetric):
             "th": {"a": "entailment", "b": "contradiction", "c": "neutral"},
             "ta": {"a": "entailment", "b": "contradiction", "c": "neutral"},
             "tl": {"a": "entailment", "b": "contradiction", "c": "neutral"},
+            "en": {"a": "entailment", "b": "contradiction", "c": "neutral"},
+            "zh": {"a": "entailment", "b": "contradiction", "c": "neutral"},
         }[lang]
         self.regex_string = {
             "id": r"(?<=jawaban:)[\s\r\n]*.*",
@@ -26,4 +28,6 @@ class NLIMetric(F1AccMetric):
             "vi": r"(?<=câu trả lời:)[\s\r\n]*.*",
             "ta": r"(?<=பதில்:)[\s\r\n]*.*",
             "tl": r"(?<=sagot:)[\s\r\n]*.*",
+            "en": r"(?<=answer:)[\s\r\n]*.*",
+            "zh": r"(?<=答案：)[\s\r\n]*.*",
         }[lang]
