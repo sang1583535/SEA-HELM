@@ -23,6 +23,8 @@ class SummarizationMetric(SeaHelmMetric):
             "vi": r"(?<=[B|b]ản tóm tắt:)[\s\r\n]*.*",
             "ta": r"(?<=சுருக்கம்:)[\s\r\n]*.*",
             "tl": r"(?<=[B|b]uod:)[\s\r\n]*.*",
+            "en": r"(?<=[S|s]ummary:)[\s\r\n]*.*",
+            "zh": r"(?<=摘要：)[\s\r\n]*.*",
         }[lang]
 
         language = "thai" if self.lang == "th" else None

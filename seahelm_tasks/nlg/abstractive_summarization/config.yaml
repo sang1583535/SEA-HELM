@@ -135,3 +135,49 @@ abssum:
           ```
           Buod: {label}
         fewshot_label: 'Buod: {label}'
+    en:
+      filepath: seahelm_tasks/nlg/abstractive_summarization/data/en_xlsum_100sample.jsonl
+      example_filepath: seahelm_tasks/nlg/abstractive_summarization/data/en_xlsum_examples.jsonl
+      max_tokens: 512
+      prompt_template:
+        template: |-
+          Summarize the following English article into a single paragraph consisting of 1 or 2 sentences.
+
+          Answer only using the following format:
+          Summary: $SUMMARY
+          Replace $SUMMARY with the summary.{fewshot_examples}
+
+          Article:
+          ```
+          {text}
+          ```
+        fewshot_example: |2-
+          Article:
+          ```
+          {text}
+          ```
+          Summary: {label}
+        fewshot_label: 'Summary: {label}'
+    zh:
+      filepath: seahelm_tasks/nlg/abstractive_summarization/data/zh_xlsum_100sample.jsonl
+      example_filepath: seahelm_tasks/nlg/abstractive_summarization/data/zh_xlsum_examples.jsonl
+      max_tokens: 512
+      prompt_template:
+        template: |-
+          请将以下中文文章总结为由1或2个句子组成的单段摘要。
+
+          请仅使用以下格式回答：
+          摘要：$SUMMARY
+          用摘要替换$SUMMARY。{fewshot_examples}
+
+          文章：
+          ```
+          {text}
+          ```
+        fewshot_example: |2-
+          文章：
+          ```
+          {text}
+          ```
+          摘要：{label}
+        fewshot_label: '摘要：{label}'
