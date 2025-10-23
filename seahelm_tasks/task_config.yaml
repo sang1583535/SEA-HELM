@@ -20,6 +20,38 @@ seahelm_plus:
   tl: ["sentiment", "belebele-qa-mc", "toxicity", "translation-en-xx", "translation-xx-en", "abssum", "causal", "nli", "if-eval", "mt-bench", "kalahi-mc"]
   jv: ["sentiment", "qa-mc", "metaphor", "translation-id-xx", "translation-xx-id", "if-eval", "mt-bench"]
   su: ["sentiment", "qa-mc", "metaphor", "translation-id-xx", "translation-xx-id", "if-eval", "mt-bench"]
+
+translation_only:
+  id: ["translation-en-xx", "translation-xx-en"]
+  vi: ["translation-en-xx", "translation-xx-en"]
+  th: ["translation-en-xx", "translation-xx-en"]
+  ta: ["translation-en-xx", "translation-xx-en"]
+  tl: ["translation-en-xx", "translation-xx-en"]
+  km: ["translation-en-xx", "translation-xx-en"]
+  lo: ["translation-en-xx", "translation-xx-en"]
+  ms: ["translation-en-xx", "translation-xx-en"]
+  my: ["translation-en-xx", "translation-xx-en"]
+  zh: ["translation-en-xx", "translation-xx-en"]
+
+nlp_classics:
+  id: ["abssum", "qa", "sentiment", "nli", "causal"]
+  vi: ["abssum", "qa", "sentiment", "nli", "causal"]
+  th: ["abssum", "qa", "sentiment", "nli", "causal"]
+  ta: ["abssum", "qa", "sentiment", "nli", "causal"]
+  tl: ["abssum", "sentiment", "nli", "causal"]
+
+custom_nlg_nlu_nlr:
+  # id: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
+  # vi: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
+  # th: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
+  # ta: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
+  # tl: ["translation-en-xx", "translation-xx-en", "abssum", "sentiment", "nli", "causal"]
+  en: ["nli", "abssum"]
+  zh: ["nli", "abssum", "translation-en-xx", "translation-xx-en"]
+  km: ["translation-en-xx", "translation-xx-en"]
+  lo: ["translation-en-xx", "translation-xx-en"]
+  ms: ["translation-en-xx", "translation-xx-en"]
+  my: ["translation-en-xx", "translation-xx-en"]
   
 all_tasks:
   id: "all"
