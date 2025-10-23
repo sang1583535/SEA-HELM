@@ -400,7 +400,7 @@ translation-xx-en:
       max_tokens: 256
       prompt_template:
         template: |-
-          បកប្រែអត្ថបទខាងក្រោមទៅជាភាសាខ្មែរ។
+          បកប្រែអត្ថបទខាងក្រោមទៅជាភាសាអង់គ្លេស
 
           ឆ្លើយតបតែក្នុងទម្រង់ខាងក្រោម:
           ការបកប្រែ: $TRANSLATION
@@ -423,7 +423,7 @@ translation-xx-en:
       max_tokens: 256
       prompt_template:
         template: |-
-          ແປຂໍ້ຄວາມຂ້າງລຸ່ມເປັນພາສາລາວ.
+          ແປຂໍ້ຄວາມຕໍ່ໄປນີ້ເປັນພາສາອັງກິດ
 
           ຕອບກັບໃນຮູບແບບຕໍ່ໄປນີ້:
           ການແປ: $TRANSLATION
@@ -446,7 +446,7 @@ translation-xx-en:
       max_tokens: 256
       prompt_template:
         template: |-
-          အောက်ဖော်ပြပါစာသားကို မြန်မာဘာသာသို့ ဘာသာပြန်ပါ။
+          အောက်ပါစာသားကို အင်္ဂလိပ်လို ဘာသာပြန်ပါ။
 
           အောက်ပါဖော်မက်ဖြင့်သာ စာပြန်ပါ-
           ဘာသာပြန်ချက်- $TRANSLATION
@@ -469,7 +469,7 @@ translation-xx-en:
       max_tokens: 256
       prompt_template:
         template: |-
-          Terjemahkan teks di bawah ke dalam bahasa Melayu.
+          Diterjemah ke dalam bahasa Inggeris
 
           Balas hanya dalam format berikut:
           Terjemahan: $TRANSLATION
@@ -492,7 +492,7 @@ translation-xx-en:
       max_tokens: 256
       prompt_template:
         template: |-
-          将以下文本翻译成中文。
+          将以下文字翻译成英文
 
           请仅按以下格式回复:
           翻译：$TRANSLATION
