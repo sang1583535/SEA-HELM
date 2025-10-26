@@ -31,11 +31,11 @@ class SentimentAnalysisMetric(F1AccMetric):
             "su": {"positip": "positive", "negatip": "negative", "netral": "neutral"},
         }[lang]
         self.regex_string = {
-            "id": r"(?<=[J|j]awaban:)[\s\r\n]*.*",
+            "id": r"(?<=jawaban:)[\s\r\n]*.*",
             "th": r"(?<=คำตอบ:)[\s\r\n]*.*",
-            "vi": r"(?<=[C|c]âu trả lời:)[\s\r\n]*.*",
+            "vi": r"(?<=câu trả lời:)[\s\r\n]*.*",
             "ta": r"(?<=பதில்:)[\s\r\n]*.*",
-            "tl": r"(?<=[S|s]agot:)[\s\r\n]*.*",
-            "jv": r"(?<=[J|j]awaban:)[\s\r\n]*.*",
-            "su": r"(?<=[J|j]awaban:)[\s\r\n]*.*",
+            "tl": r"(?<=sagot:)[\s\r\n]*.*",
+            "jv": r"(?<=jawaban:)[\s\r\n]*.*",
+            "su": r"(?<=jawaban:)[\s\r\n]*.*",
         }[lang]
