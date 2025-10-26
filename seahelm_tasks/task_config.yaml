@@ -41,17 +41,17 @@ nlp_classics:
   tl: ["abssum", "sentiment", "nli", "causal"]
 
 custom_nlg_nlu_nlr:
-  # id: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
-  # vi: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
-  # th: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
-  # ta: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
-  # tl: ["translation-en-xx", "translation-xx-en", "abssum", "sentiment", "nli", "causal"]
   en: ["nli", "abssum"]
-  zh: ["nli", "abssum", "translation-en-xx", "translation-xx-en"]
+  id: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
   km: ["translation-en-xx", "translation-xx-en"]
   lo: ["translation-en-xx", "translation-xx-en"]
   ms: ["translation-en-xx", "translation-xx-en"]
   my: ["translation-en-xx", "translation-xx-en"]
+  th: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
+  ta: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
+  tl: ["translation-en-xx", "translation-xx-en", "abssum", "sentiment", "nli", "causal"]
+  vi: ["translation-en-xx", "translation-xx-en", "abssum", "qa", "sentiment", "nli", "causal"]
+  zh: ["nli", "abssum", "translation-en-xx", "translation-xx-en"]
   
 all_tasks:
   id: "all"
