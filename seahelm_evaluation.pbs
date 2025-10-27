@@ -4,7 +4,7 @@
 #PBS -k oed
 #PBS -N seahelm_eval
 #PBS -q auto
-#PBS -l select=1:ngpus=4
+#PBS -l select=1:ngpus=8
 #PBS -l walltime=56:00:00
 
 cd $PBS_O_WORKDIR
@@ -28,11 +28,11 @@ echo "GPU info:"
 nvidia-smi --query-gpu=name,memory.total,memory.free --format=csv,noheader,nounits || echo "No GPU detected"
 
 python /scratch/e1583535/SEA-HELM/seahelm_evaluation.py \
---tasks translation_only \
---output_dir /scratch/e1583535/multiLingual-llm-project/outputs/new-translation-only \
+--tasks custom_nlg_nlu_nlr \
+--output_dir /scratch/e1583535/multiLingual-llm-project/outputs/custom_nlg_nlu_nlr \
 --model_type vllm \
---model_name /scratch/e1583535/llm/nus-olmo/mixed \
---model_args "enable_prefix_caching=True,tensor_parallel_size=4,max_num_seqs=128" \
+--model_name /scratch/e1583535/llm/nus-olmo/para-replay-half-batch \
+--model_args "enable_prefix_caching=True,tensor_parallel_size=8,max_num_seqs=128" \
 --is_base_model
 
 EOF
