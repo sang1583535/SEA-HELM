@@ -4,7 +4,7 @@
 #PBS -k oed
 #PBS -N seahelm_eval
 #PBS -q auto
-#PBS -l select=1:ngpus=2
+#PBS -l select=1:ngpus=1
 #PBS -l walltime=56:00:00
 
 cd $PBS_O_WORKDIR
@@ -16,7 +16,7 @@ module load singularity
 singularity exec -e \
 --env HF_HOME=/scratch/e1583535/cache \
 --env HF_DATASETS_CACHE=/scratch/e1583535/cache/datasets \
-$image bash << EOF > /scratch/e1583535/multiLingual-llm-project/logs/eval/stdout.$PBS_JOBID 2> /scratch/e1583535/multiLingual-llm-project/logs/eval/stderr.$PBS_JOBID
+$image bash << EOF > /scratch/e1583535/multiLingual-llm-project/logs/eval/seahelm/stdout.$PBS_JOBID.log 2> /scratch/e1583535/multiLingual-llm-project/logs/eval/seahelm/stderr.$PBS_JOBID.log
 
 if [ -d "/hpctmp/e1583535/virtualenvs/sea-helm" ]; then
     source /hpctmp/e1583535/virtualenvs/sea-helm/bin/activate
@@ -28,12 +28,31 @@ echo "GPU info:"
 nvidia-smi --query-gpu=name,memory.total,memory.free --format=csv,noheader,nounits || echo "No GPU detected"
 
 python /scratch/e1583535/SEA-HELM/seahelm_evaluation.py \
---tasks km_translation \
---output_dir /scratch/e1583535/multiLingual-llm-project/outputs/evaluation-model-200K-bin-shard/km_translation_5shot \
+--tasks translation_only \
+--output_dir /scratch/e1583535/multiLingual-llm-project/outputs/evaluation-model-200K-bin-shard/translation_only-dataset-update-2 \
 --model_type vllm \
---model_name /scratch/e1583535/llm/nus-olmo/para-last-s10b \
---model_args "enable_prefix_caching=True,tensor_parallel_size=2,max_num_seqs=128" \
---is_base_model \
+--model_name /scratch/e1583535/llm/nus-olmo/para-replay-n10B \
+--model_args "enable_prefix_caching=True,tensor_parallel_size=1,max_num_seqs=128" \
+--is_base_model
 --num_in_context_examples 5
+
+
+# python /scratch/e1583535/SEA-HELM/seahelm_evaluation.py \
+# --tasks qa_1shot \
+# --output_dir /scratch/e1583535/multiLingual-llm-project/outputs/evaluation-model-200K-bin-shard/qa_1shot \
+# --model_type vllm \
+# --model_name /scratch/e1583535/llm/nus-olmo/para-replay-n10B \
+# --model_args "enable_prefix_caching=True,tensor_parallel_size=2,max_num_seqs=128" \
+# --is_base_model \
+# --num_in_context_examples 1
+
+# python /scratch/e1583535/SEA-HELM/seahelm_evaluation.py \
+# --tasks abssum_2shot \
+# --output_dir /scratch/e1583535/multiLingual-llm-project/outputs/evaluation-model-200K-bin-shard/abssum_2shot \
+# --model_type vllm \
+# --model_name /scratch/e1583535/llm/nus-olmo/mixed-n10B \
+# --model_args "enable_prefix_caching=True,tensor_parallel_size=2,max_num_seqs=128" \
+# --is_base_model \
+# --num_in_context_examples 2
 
 EOF

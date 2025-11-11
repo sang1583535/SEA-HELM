@@ -23,14 +23,14 @@ seahelm_plus:
 
 translation_only:
   id: ["translation-en-xx", "translation-xx-en"]
-  vi: ["translation-en-xx", "translation-xx-en"]
-  th: ["translation-en-xx", "translation-xx-en"]
-  ta: ["translation-en-xx", "translation-xx-en"]
-  tl: ["translation-en-xx", "translation-xx-en"]
   km: ["translation-en-xx", "translation-xx-en"]
   lo: ["translation-en-xx", "translation-xx-en"]
-  ms: ["translation-en-xx", "translation-xx-en"]
   my: ["translation-en-xx", "translation-xx-en"]
+  ms: ["translation-en-xx", "translation-xx-en"]
+  ta: ["translation-en-xx", "translation-xx-en"]
+  th: ["translation-en-xx", "translation-xx-en"]
+  tl: ["translation-en-xx", "translation-xx-en"]
+  vi: ["translation-en-xx", "translation-xx-en"]
   zh: ["translation-en-xx", "translation-xx-en"]
 
 nlp_classics:
@@ -39,6 +39,32 @@ nlp_classics:
   th: ["abssum", "qa", "sentiment", "nli", "causal"]
   ta: ["abssum", "qa", "sentiment", "nli", "causal"]
   tl: ["abssum", "sentiment", "nli", "causal"]
+
+nlp_sentiment_nli_casual:
+  id: ["sentiment", "nli", "causal"]
+  vi: ["sentiment", "nli", "causal"]
+  th: ["sentiment", "nli", "causal"]
+  ta: ["sentiment", "nli", "causal"]
+  tl: ["sentiment", "nli", "causal"]
+
+qa_5shot:
+  id: ["qa"]
+  vi: ["qa"]
+  th: ["qa"]
+
+qa_1shot:
+  ta: ["qa"]
+
+abssum_5shot:
+  id: ["abssum"]
+
+abssum_1shot:
+  ta: ["abssum"]
+  th: ["abssum"] 
+  tl: ["abssum"]
+
+abssum_2shot:
+  vi: ["abssum"]
 
 custom_nlg_nlu_nlr:
   en: ["nli", "abssum"]
