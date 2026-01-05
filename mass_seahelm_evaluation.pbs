@@ -38,6 +38,11 @@ if [ -z "$NUM_EXAMPLES" ]; then
     exit 1
 fi
 
+BASE_MODEL_ARG=""
+if [ "$BASE_MODEL" = true ]; then
+    BASE_MODEL_ARG="--is_base_model"
+fi
+
 BASE_LOG_DIR="/scratch/e1583535/multiLingual-llm-project/logs/eval/seahelm"
 
 singularity exec -e \
@@ -60,6 +65,6 @@ python /scratch/e1583535/SEA-HELM/seahelm_evaluation.py \
 --model_type vllm \
 --model_name $CHECKPOINT_DIR \
 --model_args "enable_prefix_caching=True,tensor_parallel_size=4" \
---num_in_context_examples $NUM_EXAMPLES
+--num_in_context_examples $NUM_EXAMPLES $BASE_MODEL_ARG
 
 EOF
