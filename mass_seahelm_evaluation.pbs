@@ -43,7 +43,7 @@ if [ "$BASE_MODEL" = true ]; then
     BASE_MODEL_ARG="--is_base_model"
 fi
 
-BASE_LOG_DIR="/scratch/e1583535/multiLingual-llm-project/logs/eval/seahelm"
+BASE_LOG_DIR="/scratch/e1583535/multilingual-llm-project/logs/eval/seahelm"
 
 singularity exec -e \
 --env HF_HOME=/scratch/e1583535/cache \

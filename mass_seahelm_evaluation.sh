@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUTPUT_DIR="/scratch/e1583535/outputs/seahelm/translation-only-02012026"
+OUTPUT_DIR="/scratch/e1583535/outputs/seahelm/translation-only-02022026"
 CHECKPOINT_DIRS=(
     # "/scratch/e1583535/llm/nus-olmo/mixed-n10B"
     # "/scratch/e1583535/llm/nus-olmo/para-first-n10B"
@@ -18,7 +18,8 @@ CHECKPOINT_DIRS=(
     # "aisingapore/Llama-SEA-LION-v3.5-8B-R"
     # "sail/Sailor2-8B"
     # "SeaLLMs/SeaLLMs-v3-7B"
-    "allenai/OLMo-2-1124-7B"
+    # "allenai/OLMo-2-1124-7B"
+    "sail/Sailor2-20B"
 )
 
 # non-base-model Checkpoint
