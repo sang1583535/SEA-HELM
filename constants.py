@@ -1,5 +1,8 @@
 FEW_SHOT_STOP_TOKENS = ["\n\n"]
-BASE_MODELS_SKIP_TASKS = ["mt-bench", "kalahi-mc"]
+BASE_MODELS_SKIP_TASKS = [
+    "mt-bench", 
+    # "kalahi-mc"
+]
 INSTRUCT_MODELS_SKIP_TASKS = []
 
 INSTRUCT_NUM_IN_CONTEXT_EXAMPLES = 0

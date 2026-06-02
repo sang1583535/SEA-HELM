@@ -16,10 +16,11 @@ module load singularity
 singularity exec -e \
 --env HF_HOME=/scratch/e1583535/cache \
 --env HF_DATASETS_CACHE=/scratch/e1583535/cache/datasets \
-$image bash << EOF > /scratch/e1583535/multilingual-llm-project/logs/eval/seahelm/stdout.$PBS_JOBID.log 2> /scratch/e1583535/multiLingual-llm-project/logs/eval/seahelm/stderr.$PBS_JOBID.log
+--env VLLM_USE_V1=0 \
+$image bash << EOF > /scratch/e1583535/multilingual-llm-project/logs/eval/seahelm/stdout.$PBS_JOBID.log 2> /scratch/e1583535/multilingual-llm-project/logs/eval/seahelm/stderr.$PBS_JOBID.log
 
-if [ -d "/hpctmp/e1583535/virtualenvs/og_seahelm" ]; then
-    source /hpctmp/e1583535/virtualenvs/og_seahelm/bin/activate
+if [ -d "/scratch/e1583535/virtualenvs/my-seahelm" ]; then
+    source /scratch/e1583535/virtualenvs/my-seahelm/bin/activate
 fi
 
 echo "Starting evaluating at $(date)"
@@ -29,12 +30,12 @@ nvidia-smi --query-gpu=name,memory.total,memory.free --format=csv,noheader,nouni
 
 python /scratch/e1583535/SEA-HELM/seahelm_evaluation.py \
 --tasks translation_only \
---output_dir /scratch/e1583535/outputs/seahelm/translation-only-18122025/translation_only \
+--output_dir /scratch/e1583535/outputs/seahelm/test-translation-260211/reasoning_0shot \
 --model_type vllm \
---model_name "swiss-ai/Apertus-8B-2509" \
---model_args "enable_prefix_caching=True,tensor_parallel_size=2,dtype=bfloat16" \
---num_in_context_examples 5 \
---is_base_model 
+--model_name aisingapore/Llama-SEA-LION-v3.5-8B-R \
+--model_args enable_prefix_caching=True,tensor_parallel_size=2 \
+--is_reasoning_model \
+--num_in_context_examples 0
 
 # python /scratch/e1583535/SEA-HELM/seahelm_evaluation.py \
 # --tasks translation_xalma_sea \
