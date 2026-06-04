@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /localhome/tansang/envs/org-seahelm/bin/activate
+
 # Add a list of models (either local path or HuggingFace model id) to be evaluated
 MODEL="aisingapore/Qwen-SEA-LION-v4-32B-IT"
 
@@ -44,6 +46,7 @@ if [ $RERUN_CACHED_RESULTS = true ]; then
 else
     RERUN_RESULTS=""
 fi
+
 
 seahelm_eval_args=(
     "python $PYTHON_SCRIPT"
